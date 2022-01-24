@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/jesterHeader.jpg';
+import logo from '../images/jester-icon.png';
 import { Card } from "react-bootstrap";
 import '../App.css';
 
@@ -8,7 +8,7 @@ function Main() {
         <div className="main">
         <Card>
 
-        <img src={logo}/>
+        <img src={logo} alt="logo" className="logo"/>
 
 
         </Card>
