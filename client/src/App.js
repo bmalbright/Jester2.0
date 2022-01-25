@@ -11,6 +11,11 @@ import { setContext } from '@apollo/client/link/context';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+import CurrentTask from './pages/CurrentTask';
+import Landing from './pages/Landing';
+import PastTasks from './pages/PastTasks';
+import Profile from './pages/Profile';
+import Rules from './pages/Rules';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -41,10 +46,13 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={SearchBooks} />
-            <Route exact path="/saved" component={SavedBooks} />
+          <Navbar classname='navbar'/>
+          <Switch className='body'>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/CurrentTask" component={CurrentTask} />
+            <Route exact path="/PastTasks" component={PastTasks} />
+            <Route exact path="/Profile" component={Profile} />
+            <Route exact path="/Rules" component={Rules} />
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
         </>

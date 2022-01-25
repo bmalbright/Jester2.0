@@ -1,10 +1,11 @@
 import React from 'react';
-import Container from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
+import biglogo from '../images/JesterLogo2.svg'
 
 const landing = () => {
     return (
         <Container>
-          <p>Jester Landing</p>
+          <Image src={biglogo} alt='biglogo'/>
         </Container>
 
     )

@@ -1,10 +1,12 @@
 import React from 'react';
-import Container from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 const current = () => {
     return (
         <Container>
+          <Row>
           <p>current Jester task</p>
+          </Row>
         </Container>
 
     )
