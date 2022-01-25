@@ -8,8 +8,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
+// import SearchBooks from './pages/SearchBooks';
+// import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import CurrentTask from './pages/CurrentTask';
 import Landing from './pages/Landing';
@@ -47,7 +47,7 @@ function App() {
       <Router>
         <>
           <Navbar classname='navbar'/>
-          <Switch className='body'>
+          <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/CurrentTask" component={CurrentTask} />
             <Route exact path="/PastTasks" component={PastTasks} />
