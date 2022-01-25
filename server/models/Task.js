@@ -1,19 +1,21 @@
 const { Schema, model } = require('mongoose');
 
-const userSchema = new Schema(
+const taskSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
-      unique: true,
       trim: true
     },
-    // location: {
+    // studentScore: {
+    //   type: Number
+    // },
+    // officeHours: {
     //   type: String,
     //   required: true
     // },
-    // studentCount: {
-    //   type: Number,
+    // officeLocation: {
+    //   type: String,
     //   required: true
     // },
     jests: [
@@ -25,6 +27,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model('User', userSchema);
+const Task = model('Task', taskSchema);
 
-module.exports = User;
+module.exports = Task;

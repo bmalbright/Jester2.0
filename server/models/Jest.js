@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const userSchema = new Schema(
+const jestSchema = new Schema(
   {
     name: {
       type: String,
@@ -8,23 +8,21 @@ const userSchema = new Schema(
       unique: true,
       trim: true
     },
-    // location: {
+    // building: {
     //   type: String,
     //   required: true
     // },
-    // studentCount: {
+    // creditHours: {
     //   type: Number,
     //   required: true
     // },
-    jests: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Jest'
-      }
-    ]
+    task: {
+      type: Schema.Types.ObjectId,
+      ref: 'task'
+    }
   }
 );
 
-const User = model('User', userSchema);
+const Jest = model('Jest', jestSchema);
 
-module.exports = User;
+module.exports = Jest;

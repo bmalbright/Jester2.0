@@ -2,46 +2,43 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    _id: ID!
-    username: String!
-    email: String
-    bookCount: Int
-    savedBooks: [Book]
+    _id: ID
+    name: String
+    // location: String
+    // studentCount: Int
+    jests: [Jest] }
+  type Jest {
+    _id: ID
+    name: String
+    // building: String
+    // creditHours: Int
+    task: Task
   }
-
-  type Book {
-    bookId: ID!
-    authors: [String]
-    description: String
-    image: String
-    link: String
-    title: String!
+  type Task {
+    _id: ID
+    name: String
+    // officeHours: String
+    // officeLocation: String
+    // studentScore: Float
+    jests: [Jest]
   }
-
-  type Auth {
-    token: ID!
-    user: User
-  }
-
-  input BookInput {
-    authors: [String]
-    description: String!
-    bookId: String!
-    image: String
-    link: String
-    title: String!
-  }
-
   type Query {
-    me: User
+    users: [User]
+    jests: [Jest]
+    tasks: [Task]
+    class(id: ID!): Class
   }
-
+  # Define which mutations the client is allowed to make
   type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(bookData: BookInput!): User
-    removeBook(bookId: ID!): User
+    # Set the required fields for new schools
+    addSchool(name: String!, location: String!, studentCount: Int!): School
   }
 `;
 
 module.exports = typeDefs;
+
+
+// comparison to activity 9 in section 21
+// school = user
+// professor = task
+// class = jest
