@@ -22,7 +22,7 @@ const AppNavbar = () => {
           <Container fluid>
             <Navbar.Brand as={Link} to="/" className="brand">
               {/* check this for accuracy */}
-              Jester
+              JESTER
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">
