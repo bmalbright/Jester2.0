@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 //*removed dropdown import*
 import { Form, Button, Alert } from 'react-bootstrap';
-import "./AddJest.css";
+// import "./AddJest.css";
 import { useMutation } from '@apollo/client';
 import { NEW_JEST } from '../utils/mutations';
 // ========^^^^ add jest?===============================

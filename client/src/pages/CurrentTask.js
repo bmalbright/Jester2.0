@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Jumbotron,
     Container,
@@ -20,7 +20,7 @@ import { UPDATE_LIKE } from '../utils/mutations';
 // import { removeJestId } from '../utils/localStorage';
 import AddJest from '../components/AddJest';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 // import image from '../jester2.jpg';
 
 function CurrentTask() {
