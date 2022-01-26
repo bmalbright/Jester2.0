@@ -1,0 +1,14 @@
+[
+  {
+    "dateCreated":"Date.now()",
+    "jestTaskDescription": "Who has the most popular pet? Lets find out!",
+    "currentTask": "true"
+   
+  },
+  {
+    "dateCreated": "Date.now()",
+    "jestTaskDescription": "Who has the best car? Lets play!",
+    "currentTask": "false"
+    
+  }
+]

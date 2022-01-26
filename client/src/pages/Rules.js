@@ -14,12 +14,11 @@ function Rules() {
         <Container>
           <CardColumns>
             <Card className="rulecard">
-              <Card.Title>Step 1:</Card.Title>
-              Jester
+              <Card.Title>Step 1:</Card.Title>. Don't talk about Jester.
             </Card>
             <Card className="rulecard">
               <Card.Title>Step 2:</Card.Title>
-              jester
+              Just kidding on rule 1. Tell everyone about Jester.
             </Card>
             <Card className="rulecard">
               <Card.Title>Step 3: </Card.Title>
@@ -27,18 +26,19 @@ function Rules() {
             </Card>
             <Card className="rulecard">
               <Card.Title>Step 4</Card.Title>
-              Take a pic of the task.
+              Take a pic of the task. 
             </Card>
             <Card className="rulecard">
               <Card.Title>Step 5</Card.Title>
-              Upload the link to your profile.
+              Upload the link to your profile. 
             </Card>
             <Card className="rulecard">
               <Card.Title>Step 6</Card.Title>
-              Like your favorite pic. Winner is the Jest with the most likes.
+              Like your favorite pic. Winner is the Jest with the most likes.  
             </Card>
           </CardColumns>
         </Container>
+        {/* 4 cards of blah blah blah */}
       </div>
     </>
   );

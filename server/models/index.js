@@ -1,5 +1,4 @@
 const User = require('./User');
-const User = require('./Task');
-const User = require('./Jest');
-
-module.exports = { User, Task, Jest };
+const Task = require('./Task');
+const Jest = require('./Jest');
+module.exports = { User, Task, Jest};

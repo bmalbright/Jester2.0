@@ -105,5 +105,3 @@ export const QUERY_PROFILEJESTS = gql`
 //     }
 //   }
 // `;
-
-

@@ -13,7 +13,7 @@ import CurrentTask from './pages/CurrentTask';
 import Profile from './pages/Profile';
 import Rules from './pages/Rules';
 // import AddJest from './components/AddJest';
-import Header from './components/Header';
+// import Header from './components/header';
 
 // import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
@@ -47,7 +47,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Header />
+          {/* <Header /> */}
           <Navbar />
           
           <Switch>

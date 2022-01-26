@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-// import Icon from "../images/JesterLogo2.g";
+import Icon from "../images/testheader1.jpg";
 
 
 function appHeader() {
@@ -8,7 +8,7 @@ function appHeader() {
     <div>
       <div className="header">
         <Card  className="headercard">
-          {/* <img  className="fluid" src={Icon} alt="jester icon" ></img> */}
+          <img  className="fluid" src={Icon} alt="jester icon" ></img>
         </Card>
       </div>
     </div>
