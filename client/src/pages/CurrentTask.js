@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Jumbotron,
     Container,
@@ -20,14 +20,15 @@ import { UPDATE_LIKE } from '../utils/mutations';
 // import { removeJestId } from '../utils/localStorage';
 import AddJest from '../components/AddJest';
 
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 // import image from '../jester2.jpg';
 
 function CurrentTask() {
     const { loading, data } = useQuery(QUERY_JESTS);
 
     //data returns an object allJests: Array(3)-> being an array of all current jests
-
+    // console.log("original data======", data);
+    // const [updateLike, { error }] = useMutation(UPDATE_LIKE);
 
      // when like button clicked function fires
     //takes current jest and updates likes field to add one 

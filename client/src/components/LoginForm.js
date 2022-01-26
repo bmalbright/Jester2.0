@@ -42,7 +42,7 @@ const LoginForm = () => {
         variables: { ...userFormData },
       });
 
-      console.log(data);
+      // console.log(data);
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
@@ -53,6 +53,10 @@ const LoginForm = () => {
       email: '',
       password: '',
     });
+
+   window.location.replace('/currenttask'); 
+
+
   };
 
   return (
@@ -64,7 +68,7 @@ const LoginForm = () => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your login credentials!
+          Please check to make sure your email and password are correct.
         </Alert>
         <Form.Group>
           <Form.Label htmlFor="email">Email</Form.Label>
@@ -77,7 +81,7 @@ const LoginForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            A valid email address is required!
+            Please enter your email address.
           </Form.Control.Feedback>
         </Form.Group>
 
@@ -92,7 +96,7 @@ const LoginForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            Password is required!
+            Please enter your password.
           </Form.Control.Feedback>
         </Form.Group>
         <Button
@@ -100,7 +104,7 @@ const LoginForm = () => {
           type="submit"
           variant="success"
         >
-          Submit
+          Login
         </Button>
       </Form>
     </>

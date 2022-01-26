@@ -29,6 +29,8 @@ function Profile() {
   const handleDeleteJest = async (jestId) => {
 
     // get token
+
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     // console.log("====================",token)
     if (!token) {

@@ -13,13 +13,14 @@ const SignupForm = () => {
     email: '',
     password: '',
   });
+  // console.log(userFormData)
   // set state for form validation
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
   const [addUser, { error }] = useMutation(ADD_USER);
-
+  // console.log("me adding a new user.....", addUser)
   useEffect(() => {
     if (error) {
       setShowAlert(true);
@@ -47,7 +48,8 @@ const SignupForm = () => {
       const { data } = await addUser({
         variables: { ...userFormData },
       });
-      console.log(data);
+      // console.log(data);
+      //====what does data.addUser.token return===
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
@@ -58,6 +60,11 @@ const SignupForm = () => {
       email: '',
       password: '',
     });
+
+    
+    // window.location.replace('/CurrentTask'); 
+    // -==============in auth
+    
   };
 
   return (
@@ -71,7 +78,7 @@ const SignupForm = () => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your signup!
+          There was a problem with your registration. Please try again.
         </Alert>
 
         <Form.Group>
@@ -85,12 +92,12 @@ const SignupForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            A unique username is required.
+            A username is required.
           </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email">Email - will be used for login</Form.Label>
           <Form.Control
             type="email"
             placeholder="Your email address"
@@ -115,7 +122,7 @@ const SignupForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            A password with at least one uppercase letter and a character is required.
+            A password is required.
           </Form.Control.Feedback>
         </Form.Group>
         <Button
@@ -129,7 +136,7 @@ const SignupForm = () => {
           type="submit"
           variant="success"
         >
-          Submit
+          Register
         </Button>
       </Form>
     </>

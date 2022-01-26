@@ -57,6 +57,16 @@ export const QUERY_JESTS = gql`
 }
 `;
 
+// export const QUERY_JESTS = gql`
+//   query {
+//     allJests {
+//       _id
+//       caption
+//       image
+//       likes
+//     }
+//   }
+// `;
 
 export const QUERY_PROFILEJESTS = gql`
   query {
@@ -72,5 +82,28 @@ export const QUERY_PROFILEJESTS = gql`
     }
   }
 `;
+
+
+
+
+// believe we rewrote this query above, but kept this just in case.
+
+// export const QUERY_TASKS = gql`
+//   query alltasks{
+//     tasks {
+//       taskId
+//       dateCreated
+//       jestTaskDescription
+//       currentTask
+//       jestsArray {
+//         createdBy
+//         caption
+//         image
+//         likes
+//       }
+    
+//     }
+//   }
+// `;
 
 
