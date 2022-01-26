@@ -20,6 +20,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "dotenv": "^14.3.2",
     "mongoose": "^6.1.8",
     "npm": "^8.3.2"
   }

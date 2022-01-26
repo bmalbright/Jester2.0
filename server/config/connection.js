@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://user-1:#1@cluster0.bg2a7.mongodb.net/jester?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/jester', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // useCreateIndex: true,
