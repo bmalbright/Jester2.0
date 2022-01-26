@@ -7,7 +7,7 @@ import {
     Button,
 
 } from 'react-bootstrap';
-// import "../App.css";
+import "../App.css";
 
 
 import { useQuery, useMutation} from '@apollo/client';
@@ -51,21 +51,21 @@ function CurrentTask() {
             <Jumbotron fluid className="jumbotron">
                 <Container>
                     <h3>Current Task:</h3>
-                    <h3> A ridiculous Christmas sweater</h3>
+                    <h3> Coca-cola challenge. </h3>
                 </Container>
             </Jumbotron>
             <Container >
+                <br/>
                 <h3 className="submissionTitle">
                     {userData.length?
                          `Viewing ${userData.length}  ${userData.length === 1 ? 'submission' : 'submissions'
                         }:`
                         : 'You have no saved submissions!'}
                 </h3>
-                
+                <br/>
                 <CardColumns>
                     {userData.map((jest, i) => {
-                        // console.log(jest, i)
-                        // console.log("each jest inside the returned map html", jest);
+
                         return (
                             <Card key={jest._id} border="dark">
                                 {jest.image ? (

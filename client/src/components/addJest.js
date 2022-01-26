@@ -8,9 +8,6 @@ import { NEW_JEST } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-
-
-
 const AddJestForm = () => {
     // set initial form state
     const [userFormData, setUserFormData] = useState({
@@ -70,20 +67,11 @@ const AddJestForm = () => {
             caption: '',
             image: '',
         });
-
-
-
     };
 
     return (
         <>
-            {/* <div className="newJest" style={{
-                display: 'block',
-                width: 100%,
-                padding: 30,
-            }}> */}
             <div className="newJest">
-
 
                 {/* This is needed for the validation functionality above */}
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -116,7 +104,7 @@ const AddJestForm = () => {
                         <Form.Label htmlFor="image">Your Jest Image</Form.Label>
                         <Form.Control
                             type="text"
-                            placeholder="Just the link"
+                            placeholder="Paste the link to the pic here."
                             name="image"
                             onChange={handleInputChange}
                             value={userFormData.image}
