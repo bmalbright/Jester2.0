@@ -18,7 +18,7 @@ import { QUERY_JESTS } from '../utils/queries';
 import { UPDATE_LIKE } from '../utils/mutations';
 
 // import { removeJestId } from '../utils/localStorage';
-import AddJest from '../components/AddJest';
+// import AddJest from '../components/AddJest';
 
 // import Auth from '../utils/auth';
 // import image from '../jester2.jpg';
@@ -47,7 +47,7 @@ function CurrentTask() {
     return (
         <>
         <div className="currenttask">
-            <AddJest/>
+            {/* <AddJest/> */}
             <Jumbotron fluid className="jumbotron">
                 <Container>
                     <h3>Current Task:</h3>
