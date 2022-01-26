@@ -120,9 +120,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-
-
-// comparison to activity 9 in section 21
-// school = user
-// professor = task
-// class = jest

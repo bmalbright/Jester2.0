@@ -9,7 +9,6 @@ const typeDefs = gql`
     jests: [Jest]
     
   }
-
   type Task {
     _id: ID!
     dateCreated: String
@@ -17,7 +16,6 @@ const typeDefs = gql`
     jestsArray: [Jest]
     currentTask: Boolean
   }
-
   type Jest {
     _id: ID!
     createdBy: User
@@ -26,12 +24,10 @@ const typeDefs = gql`
     likes: Int
     taskId: Task
   }
-
   type Auth {
     token: ID!
     user: User
   }
-
   input JestInput {
     image: String!
     caption: String!
@@ -45,7 +41,6 @@ const typeDefs = gql`
     currentTask: Task
     profile: User
   }
-
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
@@ -57,9 +52,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-
-// comparison to activity 9 in section 21
-// school = user
-// professor = task
-// class = jest
