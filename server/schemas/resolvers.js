@@ -1,29 +1,121 @@
-const { User, Jest, Task } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { Task, User, Jest } = require('../models');
+const { signToken } = require('../utils/auth');
+const mongoose = require('mongoose');
 
 const resolvers = {
   Query: {
-    user: async () => {
-      return await User.find({}).populate('jests').populate({
-        path: 'jests',
-        populate: 'tasks',
-      });
+    user: async (parent, args, context) => {
+      console.log(context.user)
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        // const userData = await User.findOne({ _id: '61afd4be83fe1a707887d5be' }).populate('jests');
+        // console.log(userData)
+        return userData;
+      }
+
+      throw new AuthenticationError('Not logged in');
     },
-    jests: async () => {
-      return await Jest.find({}).populate('task');
+    profile: async (parent, args, context)=>{
+      const userData= await User.findOne({_id:context.user._id }).populate('jests').select('-__v -password');
+      return userData;
     },
-    jest: async (parent, args) => {
-      return await Jest.findById(args.id).populate('task');
-    },
+
     tasks: async () => {
-      return await Task.find({}).populate('jests');
+    return await Task.find();
     },
+    allJests: async () => {
+      return await Jest.find({});
+    }
   },
-  // Define the functions that will fulfill the mutations
+
   Mutation: {
-    addUser: async (parent, { name, location, studentCount }) => {
-      // Create and return the new School object
-      return await User.create({ name, location, studentCount });
+    //adding new user
+    addUser: async (parent, args) => {
+     
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
     },
+    //verifiying user logged in
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+      return { token, user };
+    },
+ 
+    newJest:  async (parent,  jestData , context) => {
+      if (context.user) {
+        const jest = new Jest;
+        jest.caption = jestData.caption;
+        jest.image = jestData.image;
+        jest.likes = 0;
+        
+        jest.save((err) => {
+          if(err) {
+            return err
+          }
+        });
+
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { jests: jest } },
+          { new: true }
+        );
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
+    removeJest: async (parent,  jestData , context) => {
+
+     if (context.user) {
+       
+        const deletedjest = await Jest.findOneAndDelete(
+          { _id: jestData.jestId },
+        );
+        return deletedjest;
+      }
+    },
+
+    updateLike: async (parent, { jestId }) => {
+      console.log(parent);
+      console.log("resolverssssssssss arg var", jestId)
+      return Jest.findOneAndUpdate(
+        {_id: jestId}, { $inc: {likes: 1}}, { new: true }
+      );
+      // if (context.user) {
+      //   console.log("UPDATELIKES FIRING", jestId);
+      //   const newLikesJest = await Jest.findOneAndUpdate(
+      //     // {_id: args._id}, {likes: args.likes}, { new: true}
+      //     {_id: jestId}
+      //   );
+      //   return newLikesJest;
+      
+      // }else {
+      //   console.log("not logged in, please return to login page to proceed.")
+      // }
+      
+        console.log("jest id from the resolvers", arg);
+        
+        // return newLikesJest;
+      
+    }
+    
   },
 };
 

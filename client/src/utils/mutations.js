@@ -23,39 +23,51 @@ export const ADD_USER = gql`
     }
   }
 `;
-
-export const SAVE_BOOK = gql`
-  mutation saveBook($bookData: BookInput!) {
-    saveBook(bookData: $bookData) {
+// ============== ^^^^ can stay
+//  =====================below must change================
+export const SAVE_JEST = gql`
+  mutation saveJest($postData: PostInput!) {
+    saveJest(postData: $postData) {
       _id
       username
       email
-      savedBooks {
-        bookId
-        authors
+      savedJests {
+        jestId
+        username
         image
-        description
-        title
-        link
+        caption
       }
     }
   }
 `;
 
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
-    removeBook(bookId: $bookId) {
-      _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
-      }
-    }
+export const REMOVE_JEST = gql`
+mutation removeJest($_id: ID!){
+  removeJest(jestId: $_id) {
+    _id
+  
   }
+}
+`;
+
+export const UPDATE_LIKE = gql`
+mutation updateLike($jestId: ID!){
+  updateLike(jestId: $jestId) {
+    likes
+  }
+}
+`;
+
+export const NEW_JEST = gql`
+mutation newJest($caption: String!, $image: String!){
+  newJest(caption: $caption, image: $image) {
+    _id
+    createdBy{
+      username
+    }
+    caption
+    image
+    likes
+  }
+}
 `;

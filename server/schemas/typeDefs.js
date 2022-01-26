@@ -2,36 +2,57 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    _id: ID
-    name: String
-    // location: String
-    // studentCount: Int
-    jests: [Jest] }
-  type Jest {
-    _id: ID
-    name: String
-    // building: String
-    // creditHours: Int
-    task: Task
+    _id: ID!
+    username: String!
+    email: String!
+    password: String!
+    jests: [Jest]
+    
   }
+
   type Task {
-    _id: ID
-    name: String
-    // officeHours: String
-    // officeLocation: String
-    // studentScore: Float
-    jests: [Jest]
+    _id: ID!
+    dateCreated: String
+    jestTaskDescription: String
+    jestsArray: [Jest]
+    currentTask: Boolean
   }
+
+  type Jest {
+    _id: ID!
+    createdBy: User
+    caption: String
+    image: String
+    likes: Int
+    taskId: Task
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  input JestInput {
+    image: String!
+    caption: String!
+    
+  }
+  
   type Query {
-    users: [User]
-    jests: [Jest]
+    user: User
     tasks: [Task]
-    class(id: ID!): Class
+    allJests: [Jest]
+    currentTask: Task
+    profile: User
   }
-  # Define which mutations the client is allowed to make
+
   type Mutation {
-    # Set the required fields for new schools
-    addSchool(name: String!, location: String!, studentCount: Int!): School
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    saveJest(jestData: JestInput!): Task
+    removeJest(jestId: ID!): Jest
+    newJest(caption: String!, image: String!): Jest
+    updateLike(jestId: ID!): Jest
   }
 `;
 

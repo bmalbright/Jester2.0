@@ -77,7 +77,7 @@ const LoginForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            Email is required!
+            A valid email address is required!
           </Form.Control.Feedback>
         </Form.Group>
 
