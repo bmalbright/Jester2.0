@@ -18,7 +18,7 @@ import { QUERY_JESTS } from '../utils/queries';
 import { UPDATE_LIKE } from '../utils/mutations';
 
 // import { removeJestId } from '../utils/localStorage';
-import AddJest from '../components/AddJest';
+import AddJest from '../components/AddJest1';
 
 import Auth from '../utils/auth';
 // import image from '../jester2.jpg';
