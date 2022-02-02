@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 //*removed dropdown import*
 import { Form, Button, Alert } from 'react-bootstrap';
-import "../App.css";
+import "./AddJest.css";
 import { useMutation } from '@apollo/client';
 import { NEW_JEST } from '../utils/mutations';
 // ========^^^^ add jest?===============================
 
 import Auth from '../utils/auth';
+
+
+
 
 const AddJestForm = () => {
     // set initial form state
@@ -67,11 +70,20 @@ const AddJestForm = () => {
             caption: '',
             image: '',
         });
+
+
+
     };
 
     return (
         <>
+            {/* <div className="newJest" style={{
+                display: 'block',
+                width: 100%,
+                padding: 30,
+            }}> */}
             <div className="newJest">
+
 
                 {/* This is needed for the validation functionality above */}
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -104,7 +116,7 @@ const AddJestForm = () => {
                         <Form.Label htmlFor="image">Your Jest Image</Form.Label>
                         <Form.Control
                             type="text"
-                            placeholder="Paste the link to the pic here."
+                            placeholder="Just the link"
                             name="image"
                             onChange={handleInputChange}
                             value={userFormData.image}

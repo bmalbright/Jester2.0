@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Tab, Image } from "react-bootstrap";
 import SignUpForm from "./Signup";
 import LoginForm from "./Login";
 
-import smallIcon from "../images/JesterLogo2test.png"
-
-// import AddJest from "./AddJest";
+import jesterBrand from "../images/jesterBrand.png"
 
 import Auth from "../utils/auth";
 import "../App.css";
@@ -19,13 +17,12 @@ const AppNavbar = () => {
     <>
       <div>
 
-
         <Navbar expand="lg">
           <Container fluid>
             <Navbar.Brand as={Link} to="/" className="brand">
               {/* check this for accuracy */}
-              <Image src={smallIcon} alt='smallIcon' />
-              JESTER
+              <Image src={jesterBrand} alt="jesterBrand" />
+              Jester
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbar" />
             <Navbar.Collapse id="navbar">

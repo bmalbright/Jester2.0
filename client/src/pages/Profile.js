@@ -7,7 +7,7 @@ import {
     Button,
   } from 'react-bootstrap';
   import "../App.css";
-  import AddJest from '../components/AddJest1';
+  import AddJest from '../components/AddJest';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PROFILEJESTS } from '../utils/queries';
