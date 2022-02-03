@@ -20,9 +20,6 @@ import { UPDATE_LIKE } from '../utils/mutations';
 // import { removeJestId } from '../utils/localStorage';
 import AddJest from '../components/AddJest1';
 
-import Auth from '../utils/auth';
-// import image from '../jester2.jpg';
-
 function CurrentTask() {
     const { loading, data } = useQuery(QUERY_JESTS);
 
@@ -37,8 +34,7 @@ function CurrentTask() {
     });
 
     //userData is assigned an array of 3 objects(jests)
-    const userData = data?.allJests || {};
-   
+    const userData = data?.allJests || {};  
 
     if (loading) {
         return <h2>LOADING...</h2>;
@@ -51,9 +47,10 @@ function CurrentTask() {
             <Jumbotron fluid className="jumbotron">
                 <Container>
                     <h3>Current Task:</h3>
-                    <h3> A ridiculous Christmas sweater</h3>
+                    <h3> A coke challenge. Best pic of you drinking a coke. </h3>
                 </Container>
             </Jumbotron>
+            <br/>
             <Container >
                 <h3 className="submissionTitle">
                     {userData.length?

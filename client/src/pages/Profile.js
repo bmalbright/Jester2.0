@@ -13,9 +13,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PROFILEJESTS } from '../utils/queries';
 import { REMOVE_JEST } from '../utils/mutations';
 
-
 import Auth from '../utils/auth';
-
 
 function Profile() {
   const { loading, data } = useQuery(QUERY_PROFILEJESTS);
@@ -23,14 +21,9 @@ function Profile() {
 
   const userData = data?.profile || {};
 
-
-
-
   const handleDeleteJest = async (jestId) => {
 
     // get token
-
-
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     // console.log("====================",token)
     if (!token) {
@@ -69,7 +62,7 @@ function Profile() {
           <h2 className="jestsTitle">
 
             {userData.jests?.length
-              ? `${userData.jests.length} saved ${userData.jests.length === 1 ? 'Jest' : 'Jests'
+              ? `You have ${userData.jests.length} saved ${userData.jests.length === 1 ? 'Jest' : 'Jests'
               }:`
               : 'You have no saved Jests!'}
           </h2>

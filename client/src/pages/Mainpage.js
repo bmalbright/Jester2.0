@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../images/JesterLogo2.svg';
-import { Card, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import '../App.css';
 
 function Main() {
@@ -9,7 +9,6 @@ function Main() {
         <Col className="mainImg">
 
         <img className="imageFrame" src={logo} alt="landing page large logo"/>
-
 
         </Col>
         </div>

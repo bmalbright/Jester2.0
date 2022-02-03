@@ -5,45 +5,23 @@
   text-align: center;
 }
 
-.mainImg {
-  border: none;
-}
-/* actual image from main page */
-.imageFrame {
-  height: 83vh;
-}
-
-.header {
-  background-color: #1E0126;
- 
-}
-
+/* this grouping is for the navbar classes */
 .navbar {
   background-color: #01eeff;
-}
-
-
-h3 {
-  font-size:x-large;
-  text-align: center;
-  font-family: bookman;
-  font-weight: bolder;
-  font-style: italic;
-  color: #F2B441;
 }
 
 .brand {
   font-weight: bolder;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-style: italic;
+  font-style: normal;
   font-size: xx-large;
   color: #4F0359;
 }
 
 .navLink {
   font-weight: bolder;
-  font-family: 'Quicksand', sans-serif;
-  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style:normal;
   font-size: x-large;
 }
 
@@ -51,13 +29,49 @@ h3 {
   color: white;
 }
 
-
+/* grouping for mainpage, which is the landing page */
 .main {
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: italic;
   height: 83vh;
 }
+
+/* actual image from main page */
+.imageFrame {
+  height: 83vh;
+}
+
+/* jumbotron */
+.jumbotron {
+  background-color: #2efbff;
+  color: #3d0773;
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size:x-large;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 2em;
+  color: #3d0773;
+}
+
+
+.profile {
+  min-height: 84vh;
+  color: #3d0773;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.currenttask {
+  min-height: 84vh;
+  
+}
+
 
 .rules {
   color: #19FF5A;
@@ -74,31 +88,16 @@ h3 {
   color:#4F0359;
 }
 
-.currenttask {
-  
-}
 
-.profile {
-  min-height: 84vh;
-}
 
-.jumbotron {
-  background-color: #F2B441;
-  color: #4F0359;
-  width: 60%;
-  margin: auto;
-  border-radius: 10px;
-}
-.jumbotron h3 {
-  color: #4F0359;
-  font-size: 2.2em;
-  font-family: 'Dosis', sans-serif;
-}
+
+
+
 .submissionTitle {
   font-family: 'Quicksand', sans-serif;
 }
 .newJest {
-  color:#F2B441;
+  color:#3d0773;
   /* padding-bottom: 3vh; */
   padding: 7%;
   width: 100%;
@@ -109,13 +108,8 @@ h3 {
 .jestBtn {
   color:#F2B441;
 }
-.jestsTitle {
+/* .jestsTitle {
   color: #F2B441;
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
-}
 
-/* ========================================================= */
-.headercard{
-max-height: 90px;
-}
+  font-family: 'Quicksand', sans-serif;
+} */
