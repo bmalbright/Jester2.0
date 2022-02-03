@@ -1,17 +1,17 @@
 import React from 'react';
-import logo from '../images/jesterHeader.jpg';
-import { Card } from "react-bootstrap";
+import logo from '../images/JesterLogo2.svg';
+import { Card, Col } from "react-bootstrap";
 import '../App.css';
 
 function Main() {
     return (
         <div className="main">
-        <Card className="mainImg">
+        <Col className="mainImg">
 
         <img className="imageFrame" src={logo} alt="landing page large logo"/>
 
 
-        </Card>
+        </Col>
         </div>
     )
 }
