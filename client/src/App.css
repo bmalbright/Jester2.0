@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Quicksand&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Quicksand&display=swap'); */
 
 .App {
   text-align: center;
@@ -47,6 +47,7 @@
   width: 50%;
   margin: auto;
   border-radius: 10px;
+  padding: 3%;
 }
 
 h3 {
@@ -59,57 +60,54 @@ h3 {
   color: #3d0773;
 }
 
-
+/* profile page */
 .profile {
   min-height: 84vh;
   color: #3d0773;
-  text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
 }
 
 .currenttask {
   min-height: 84vh;
-  
+  color: #3d0773;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
 }
 
-
+/* rules page */
 .rules {
-  color: #19FF5A;
   min-height: 60vh ;
-  font-family: bookman;
-  font-style: italic;
-  font-weight: bolder;
   text-align: center;
   min-height: 100vh;
 }
 
 .rulecard {
-  background-color: #18B532;
-  color:#4F0359;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: normal;
+  font-weight: bolder;
+  background-color: #01eeff;
+  color:#3d0773;
 }
 
-
-
-
-
-
-.submissionTitle {
-  font-family: 'Quicksand', sans-serif;
-}
 .newJest {
   color:#3d0773;
-  /* padding-bottom: 3vh; */
-  padding: 7%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 12%;
+  padding-right: 12%;
   width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 125%;
 }
+
 .newJest form {
   /* width: 80vw; */
 }
-.jestBtn {
-  color:#F2B441;
-}
-/* .jestsTitle {
-  color: #F2B441;
 
-  font-family: 'Quicksand', sans-serif;
-} */
+.jestBtn {
+  color: white;
+  background-color: #3d0773;
+}
+

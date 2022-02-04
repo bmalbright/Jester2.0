@@ -57,7 +57,7 @@ function Profile() {
             <h3>Viewing your Jests!</h3>
           </Container>
         </Jumbotron>
-
+        <br/>
         <Container className="profile">
           <h2 className="jestsTitle">
 

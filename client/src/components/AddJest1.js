@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 //*removed dropdown import*
 import { Form, Button, Alert } from 'react-bootstrap';
-import "./AddJest.css";
 import { useMutation } from '@apollo/client';
 import { NEW_JEST } from '../utils/mutations';
 // ========^^^^ add jest?===============================
 
 import Auth from '../utils/auth';
-
-
-
 
 const AddJestForm = () => {
     // set initial form state
@@ -70,24 +66,13 @@ const AddJestForm = () => {
             caption: '',
             image: '',
         });
-
-
-
     };
 
     return (
         <>
-            {/* <div className="newJest" style={{
-                display: 'block',
-                width: 100%,
-                padding: 30,
-            }}> */}
             <div className="newJest">
-
-
                 {/* This is needed for the validation functionality above */}
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-
                     <Alert
                         dismissible
                         onClose={() => setShowAlert(false)}
@@ -116,14 +101,14 @@ const AddJestForm = () => {
                         <Form.Label htmlFor="image">Your Jest Image</Form.Label>
                         <Form.Control
                             type="text"
-                            placeholder="Just the link"
+                            placeholder="Paste the image link here."
                             name="image"
                             onChange={handleInputChange}
                             value={userFormData.image}
                             required
                         />
                         <Form.Control.Feedback type="invalid">
-                            A valid Jest link is required.
+                            A valid image link is required to submit a Jest.
                         </Form.Control.Feedback>
                     </Form.Group>
 
@@ -132,7 +117,6 @@ const AddJestForm = () => {
                             !(
                                 userFormData.caption &&
                                 userFormData.image
-
                             )
                         }
                         type="submit"
